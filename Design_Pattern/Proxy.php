@@ -29,7 +29,7 @@
     // 通过代理实现MySQL的读写分离，如果是读操作，就连接127.0.0.1的数据库，写操作就读取127.0.0.2的数据库
     class Proxy {
         protected $reader;
-        protected $wirter;
+        protected $writer;
         public function __construct(){
             $this->reader = new PDO('mysql:host=127.0.0.1;port=3306;dbname=laravel;','root','root');
             $this->writer = new PDO('mysql:host=127.0.0.2;port=3306;dbname=laravel;','root','root');
